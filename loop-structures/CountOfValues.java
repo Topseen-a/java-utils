@@ -4,7 +4,7 @@ import java.util.Scanner;
 
         Scanner input = new Scanner(System.in);
         
-        int postive = 0;
+        int positive = 0;
         int negative = 0;
         int zeros = 0;
     
@@ -17,18 +17,18 @@ import java.util.Scanner;
             }
 
         if (number > 0){
-            positiveCount++;
+            positive++;
             }
         else if (number < 0){
-            neagativeCount++;
+            negative++;
             }
         else {
-            zeroCount++;
+            zeros++;
             }
         }
-        System.out.println("Positive numbers are: " + positveCount++);
-        System.out.println("Negative numbers are: " + neativeCount++);
-        System.out.println("Zeros: " + zeroCount++);
+        System.out.println("Positive numbers are: " + positive);
+        System.out.println("Negative numbers are: " + negative);
+        System.out.println("Zeros: " + zeros);
 
         }
     }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter a number: ");
+        System.out.print("Enter the number you want or enter -1 to exit: ");
         int number = input.nextInt();
 
         int largest = number;
@@ -12,7 +12,7 @@ import java.util.Scanner;
 
         while(true){
             
-            System.out.print("Enter the numbers you want: ");
+            System.out.print("Enter the number you want or enter -1 to exit: ");
             number = input.nextInt();
 
             if(number == -1) {
