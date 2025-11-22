@@ -5,7 +5,7 @@ import java.util.Scanner;
         Scanner input = new Scanner(System.in);
 
         while(true){
-            System.out.println("Enter account number or -1 to exit: ");
+            System.out.print("Enter account number or -1 to exit: ");
             int accountNumber = input.nextInt();
 
             if(accountNumber == -1){
@@ -27,7 +27,7 @@ import java.util.Scanner;
 
             int newBalance = beginningBalance + totalItems - totalCredits;
 
-            System.out.println("New balance " + accountNumber + "is " + newBalance);
+            System.out.println("New balance is " + newBalance);
 
             if(newBalance > creditLimit){
                 System.out.println("Credit limit is exceeded");

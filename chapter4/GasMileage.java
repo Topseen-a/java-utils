@@ -15,19 +15,19 @@ import java.util.Scanner;
             if(milesDriven == -1){
                 System.out.println("Exiting program");
                 break;     
-                }
+                } 
 
                 System.out.print("Enter the number of gallons used: ");
                 int gallonUsed = input.nextInt();
 
                 double trip = milesDriven / gallonUsed;
-                System.out.println("Miles per gallon is: ", + trip);
+                System.out.println("Miles per gallon is: " + trip);
                 
                 miles = miles + milesDriven;
                 gallon = gallon + gallonUsed;
 
                 double totalMilesPerGallon = miles / gallon;
-                System.out.println("Miles per gallon is: " + totalMilesPerGallon);
+                System.out.println("Combined miles per gallon is: " + totalMilesPerGallon);
                 }
             }
     }
