@@ -6,7 +6,7 @@ public class Kata {
         } else {
             return false;
         }
-}
+    }
     public static boolean isPrime(int number) {
         int flag = 0;
         if (number <= 1){
@@ -26,5 +26,25 @@ public class Kata {
             }
         }
 
-    
+    public static boolean isPalindrome(int number) {
+        int numberOne = number / 10000;
+        int numberTwo = (number / 1000) % 10;
+        int numberThree = (number / 100) % 10;
+        int numberFour = (number /10) % 10;
+        int numberFive = number % 10;
+
+        if (numberOne == numberFive && numberTwo == numberFour){
+            return true;
+            } else {
+                return false;
+                }
+    }
+
+
+
+
+
+
+
+
 }
