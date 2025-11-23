@@ -47,13 +47,13 @@ public class Kata {
             }
             return factorial;
 
-
-
-
     }
 
-
-
+    public static long squareOf(int number) {
+        int square = number * number;
+        return square;
+    
+    }
 
 
 
