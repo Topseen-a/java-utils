@@ -1,5 +1,5 @@
 import java.util.Scanner;
-    public class IsEven {
+    public class Even {
         public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
