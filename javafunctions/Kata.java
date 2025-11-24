@@ -66,8 +66,16 @@ public class Kata {
         } else {
             return numberOne / numberTwo;
         }
-
-
     }
 
+    public static int factorOf(int number) {
+
+        int count = 0;
+        for (int index = 1; index <= number; index++){
+            if (number % index == 0){
+                count ++;
+                } 
+        }
+        return count;
+    }
 }
