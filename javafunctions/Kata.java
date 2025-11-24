@@ -69,7 +69,6 @@ public class Kata {
     }
 
     public static int factorOf(int number) {
-
         int count = 0;
         for (int index = 1; index <= number; index++){
             if (number % index == 0){
@@ -77,5 +76,15 @@ public class Kata {
                 } 
         }
         return count;
+    }
+
+    public static int subtractionOf(int numberOne, int numberTwo){
+        if (numberOne > numberTwo){
+            return numberOne - numberTwo;    
+            } else {
+                return numberTwo - numberOne;
+                }
+
+
     }
 }
