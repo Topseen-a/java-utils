@@ -56,11 +56,18 @@ public class Kata {
     }
 
     public static boolean isSquare(int number) {
-
         double result = Math.sqrt(number);
-
         return result * result == number;
     }
 
+    public static float divisionOf(float numberOne, float numberTwo){
+        if (numberTwo == 0){
+            return 0;
+        } else {
+            return numberOne / numberTwo;
+        }
+
+
+    }
 
 }
