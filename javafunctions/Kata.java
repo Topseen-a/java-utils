@@ -55,6 +55,16 @@ public class Kata {
     
     }
 
+    public static boolean isSquare(int number) {
+
+        int result = Math.sqrt(number);
+ 
+        if (result * result == number ){
+        return true;
+            } else {
+                return false;
+                }
+    }
 
 
 }
