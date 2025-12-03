@@ -12,7 +12,6 @@ import java.util.Scanner;
         for (int count = 1; count <= number; count++){
             factorial *=count;
             }
-
         System.out.println("The factorial is " + factorial);
         }
     }
