@@ -1,32 +1,19 @@
 public class LargestElement{
     public static void main(String[] args){
 
-    System.out.println(isLargest([12,2,4,56,7]));
+    int[] number = {12,2,4,56,7};
+    int result = isLargest(number);
+    System.out.println("The largest is " + result);
     }
 
-public static int islargest(int number[]){
-//    number = number[];
+public static int isLargest(int[] number){
     int largest = number[0];
 
-    for (int count = 1, count <= number; count ++){
-        if (count > largest){
-            largest = count;
-        return largest;
+    for (int count = 1; count < number.length; count ++){
+        if (number[count] > largest){
+            largest = number[count];
             }        
-
-
-
         }
-
+    return largest;
     }
-
-
-
-
-
-
-
-
-
-
 }

@@ -1,7 +1,7 @@
 public class LogisticsDelivery{
     public static void main(String[] args){
 
-    System.out.println(getCollectionRate(25));            
+    System.out.println(getCollectionRate(80));            
     }
 
 public static int getCollectionRate(int number){
