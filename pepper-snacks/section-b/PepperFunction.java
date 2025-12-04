@@ -4,16 +4,15 @@ public class PepperFunction{
 
     int[] array = {12,2,4,56,7};
     int number = 56;
-//    int result = isLargest(array);
-//    System.out.println("The largest is " + result);
-//    System.out.println(checkElement(array, number));
-//    int result = getTotal(array);
-//    System.out.println("The result is " + result);
-//    System.out.println(Arrays.toString(getReverse(array)));
-//    System.out.println(takeNumber(2342));  
-//    int[] secondArray = {3,21,78,45,53,34};
-//    int[] firstArray = {32,215,80,71,89,04,78,90,43,21,89};
-//    System.out.println(Arrays.toString(combineArray(firstArray, secondArray)));
+    int result = isLargest(array);
+    System.out.println("The largest is " + result);
+    System.out.println(checkElement(array, number));
+    int result = getTotal(array);
+    System.out.println("The result is " + result);
+    System.out.println(Arrays.toString(getReverse(array)));
+    int[] secondArray = {3,21,78,45,53,34};
+    int[] firstArray = {32,215,80,71,89,04,78,90,43,21,89};
+    System.out.println(Arrays.toString(combineArray(firstArray, secondArray)));
     System.out.println(checkIndex(array, number));
     }
 
@@ -82,29 +81,6 @@ public static int checkIndex(int[] array, int number){
         }
             return -1; 
     }
-//public static int isOddPosition(int[] number){
-//    int[] odd = new int[size];
-//
-//    for (int count = 1; count < number.length; count++){
-//        if (number.length % 2 != 0){
-//            return count
-//            }
-//        }
-//    return odd;
-//    }
-
-//public static int[] takeNumber(int number){
-//
-//    number = 0;
-//    int[] newArray = new int[size];
-//
-//    for (int count = 1; count < number.length; count++){
-//        number.length % 10;
-//        }
-//    return number;
-//    }
-
-
 }
 
 
