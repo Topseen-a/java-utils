@@ -1,14 +1,16 @@
+import java.util.Arrays;
 public class PepperFunction{
     public static void main(String[] args){
 
     int[] array = {12,2,4,56,7};
     int number = 12;
-//    int result = isLargest(array);
-//    System.out.println("The largest is " + result);
-//    System.out.println(checkElement(array, number));
-//    int result = getTotal(array);
-//    System.out.println("The result is " + result);
-//    System.out.println(takeNumber(2342));
+    int result = isLargest(array);
+    System.out.println("The largest is " + result);
+    System.out.println(checkElement(array, number));
+    int result = getTotal(array);
+    System.out.println("The result is " + result);
+    System.out.println(Arrays.toString(getReverse(array)));
+    System.out.println(takeNumber(2342));  
     }
 
 public static int isLargest(int[] array){
@@ -22,17 +24,15 @@ public static int isLargest(int[] array){
     return largest;
     }
 
-//public static int getReverse(int[] number){
-//    int[] newArray = new int[5];
-//
-//    for (int count =1; count < number.length; count--){
-//        newArray += number;
-//
-//
-//        }
-//
-//    return newArray;
-//    }
+public static int[] getReverse(int[] array){
+    int[] newArray = new int[array.length];
+    int counter = 0;
+    for (int count = array.length -1; count >= 0; count--){
+        newArray[counter] = array[count];
+        counter++;
+        }
+    return newArray;
+    }
 
 public static boolean checkElement(int[] array, int number){
     for (int count = 0; count < array.length; count++){    
