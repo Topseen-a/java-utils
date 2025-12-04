@@ -1,4 +1,4 @@
-public class LargestElement{
+public class PepperFunction{
     public static void main(String[] args){
 
     int[] array = {12,2,4,56,7};
