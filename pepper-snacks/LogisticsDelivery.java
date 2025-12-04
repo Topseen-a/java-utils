@@ -1,10 +1,10 @@
 public class LogisticsDelivery{
     public static void main(String[] args){
 
-    System.out.println(collectionRate(25));            
+    System.out.println(getCollectionRate(25));            
     }
 
-public static int collectionRate(int number){
+public static int getCollectionRate(int number){
     int riderWage;
 
     if (number < 50){
