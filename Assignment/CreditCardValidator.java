@@ -1,30 +1,36 @@
 import java.util.Scanner;
 
-public class Creditcard{
+public class CreditCardValidator{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter your card details: ");
         String cardNumber = input.nextLine();
+
+        
     }
 
-public static boolean cardNumberLength(String cardNumber){
-    return cardNumber.length() >= 13 && cardNumber.length() <= 16;
+public static boolean isValidCard(String cardNumber){
+    int sum = 0;
+    
+    for (int index = cardNumber.length() - 1; index >= 0; index--){
+        
+    }
 }
 
 public static String cardType(String cardNumber){
     String cardType;
 
-    if (cardNumber.charAt(0) == "4"){
+    if (cardNumber.startsWith("4")){
         return "Visa Card";
     }
-    else if (cardNumber.charAt(0) == "5"){
-        return "Master Card"
+    else if (cardNumber.startsWith("5")){
+        return "Master Card";
     }
-    else if (cardNumber.charAt(0) == "3" && cardNumber.charAt(1) == "7"){
+    else if (cardNumber.startsWith("37")){
         return "American Express Card";
     }
-    else if(cardNumber.charAt(0) == "6"){
+    else if(cardNumber.startsWith("6")){
         return "Discover Card";
     }
     else{
