@@ -10,6 +10,5 @@ import java.util.Scanner;
         long checkFactorial = Kata.factorialOf(number);
         System.out.println("Factorial is " + checkFactorial);
         }
-    
         
     }
