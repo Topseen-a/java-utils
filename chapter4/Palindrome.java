@@ -27,5 +27,4 @@ import java.util.Scanner;
             System.out.println("It is not a palindrome");
             }
         }
-
     }
