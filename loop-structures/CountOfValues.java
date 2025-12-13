@@ -29,7 +29,6 @@ import java.util.Scanner;
         System.out.println("Positive numbers are: " + positive);
         System.out.println("Negative numbers are: " + negative);
         System.out.println("Zeros: " + zeros);
-
         }
     }
 
