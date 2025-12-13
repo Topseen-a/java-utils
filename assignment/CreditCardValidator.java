@@ -58,7 +58,4 @@ public static String cardType(String cardNumber){
 
 
 
-
-
-
 }
