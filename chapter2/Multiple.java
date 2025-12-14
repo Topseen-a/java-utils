@@ -10,7 +10,14 @@ import java.util.Scanner;
         System.out.print("Enter second integer:");
         int numberTwo = input.nextInt();
 
-        int trippled = numberOne * numberOne * numberOne;
-        
+        int numberOneTrippled = numberOne * 3;
+        int numberTwoDoubled = numberTwo * 2;
+
+        if (numberOneTrippled % numberTwoDoubled == 0){
+            System.out.println("It is a multiple");
+        }
+        else {
+            System.out.println("It is not a multiple");
+        }
         }
     }
