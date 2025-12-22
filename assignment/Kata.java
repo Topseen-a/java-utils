@@ -1,7 +1,7 @@
 public class Kata{
     public static void main(String[] args){
 
-    System.out.println(factorOf(10));
+    System.out.println(factorialOf(5));
 }
     
     public static boolean isEven(int number){
@@ -39,5 +39,13 @@ public class Kata{
             }      
         }
         return count;
+    }
+
+    public static int factorialOf(int number){
+        int factorial = 1;
+        for (int count = 1; count <= number; count++){
+            factorial *= count;
+        }
+        return factorial;
     }
 }
