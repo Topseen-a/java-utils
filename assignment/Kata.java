@@ -1,7 +1,7 @@
 public class Kata{
     public static void main(String[] args){
 
-    System.out.println(getDivision(24, 12));
+    System.out.println(factorOf(10));
 }
     
     public static boolean isEven(int number){
@@ -29,5 +29,15 @@ public class Kata{
         else {
             return firstNumber / secondNumber;
         }
+    }
+
+    public static int factorOf(int number){
+        int count = 0;
+        for (int index = 1; index <= number; index++){
+            if (number % index == 0){
+                count ++;
+            }      
+        }
+        return count;
     }
 }
