@@ -32,13 +32,13 @@ public class Kata{
     }
 
     public static int factorOf(int number){
-        int count = 0;
+        int factor = 0;
         for (int index = 1; index <= number; index++){
             if (number % index == 0){
-                count ++;
+                factor ++;
             }      
         }
-        return count;
+        return factor;
     }
 
     public static int factorialOf(int number){
