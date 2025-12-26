@@ -1,7 +1,7 @@
 public class Kata{
     public static void main(String[] args){
 
-    System.out.println(squareOf(5));
+    System.out.println(isPrimeNumber(5));
 }
     
     public static boolean isEven(int number){
@@ -77,5 +77,18 @@ public class Kata{
     public static long squareOf(int number){
         int result = number * number;
         return result;
+    }
+
+    public static boolean isPrimeNumber(int number){
+        if (number <= 1){
+            return false;        
+        }
+
+        for (int count = 2; count <= number / 2; count++){
+            if (number % count == 0){
+                return false;
+            }
+        }
+        return true;
     }
 }
