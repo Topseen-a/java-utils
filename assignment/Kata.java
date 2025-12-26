@@ -1,7 +1,7 @@
 public class Kata{
     public static void main(String[] args){
 
-    System.out.println(isPalindrome(54145));
+    System.out.println(squareOf(5));
 }
     
     public static boolean isEven(int number){
@@ -72,5 +72,10 @@ public class Kata{
         else {
             return false;
         }
+    }
+
+    public static long squareOf(int number){
+        int result = number * number;
+        return result;
     }
 }
