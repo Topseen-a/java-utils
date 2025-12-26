@@ -2,7 +2,7 @@ public class ArrayKata{
     public static void main(String[] args){
 
     int[] array = {1,3,7,4};
-    System.out.println(minimumIn(array));
+    System.out.println(sumOf(array));
     }
 
     public static int maximumIn(int[] array){
@@ -23,5 +23,13 @@ public class ArrayKata{
             }
         }
         return minimum;
+    }
+
+    public static int sumOf(int[] array){
+        int sum = 0;
+        for (int count = 0; count < array.length; count++){
+            sum += array[count];
+        }
+        return sum;
     }
 }
