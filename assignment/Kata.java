@@ -1,7 +1,7 @@
 public class Kata{
     public static void main(String[] args){
 
-    System.out.println(isSquare(25));
+    System.out.println(isPalindrome(54145));
 }
     
     public static boolean isEven(int number){
@@ -56,6 +56,21 @@ public class Kata{
         }
         else {
             return false;        
+        }
+    }
+
+    public static boolean isPalindrome(int number){
+        int firstNumber = number / 10000;
+        int secondNumber = (number / 1000) % 10;
+        int thirdNumber = (number / 100) % 10;
+        int fourthNumber = (number / 10) % 10;
+        int fifthNumber = number % 10;
+
+        if (firstNumber == fifthNumber && secondNumber == fourthNumber){
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }
