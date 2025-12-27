@@ -2,8 +2,8 @@ import java.util.Arrays;
 public class ArrayKata{
     public static void main(String[] args){
 
-    int[] array = {6,12,3,8,4};
-    System.out.println(Arrays.toString(maximumAndMinimumOf(array)));
+    int[] array = {7,12,3,8,4};
+    System.out.println(noOfOddNumbersIn(array));
     }
 
     public static int maximumIn(int[] array){
@@ -69,5 +69,15 @@ public class ArrayKata{
         newArray[0] = maximum;
         newArray[1] = minimum;
         return newArray;
+    }
+    
+    public static int noOfOddNumbersIn(int[] array){
+        int counter = 0;
+        for (int count = 0; count < array.length; count++){
+            if (array[count] % 2 != 0){
+                counter++;
+            }
+        }
+        return counter;
     }
 }
