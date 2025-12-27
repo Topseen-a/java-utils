@@ -3,7 +3,7 @@ public class ArrayKata{
     public static void main(String[] args){
 
     int[] array = {7,12,3,8,4};
-    System.out.println(Arrays.toString(oddNumbersIn(array)));
+    System.out.println(Arrays.toString(squareNumbersIn(array)));
     }
 
     public static int maximumIn(int[] array){
@@ -127,6 +127,15 @@ public class ArrayKata{
                 newArray[index] = array[count];
                 index++;
             }    
+        }
+        return newArray;
+    }
+
+    public static int[] squareNumbersIn(int[] array){
+        int[] newArray = new int[array.length];
+        for (int count = 0; count < array.length; count++){
+            int square = array[count] * array[count];
+            newArray[count] = square;
         }
         return newArray;
     }
