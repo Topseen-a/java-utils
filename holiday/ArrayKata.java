@@ -1,8 +1,9 @@
+import java.util.Arrays;
 public class ArrayKata{
     public static void main(String[] args){
 
-    int[] array = {1,3,8,4};
-    System.out.println(sumOfOddNumbersIn(array));
+    int[] array = {6,12,3,8,4};
+    System.out.println(Arrays.toString(maximumAndMinimumOf(array)));
     }
 
     public static int maximumIn(int[] array){
@@ -51,5 +52,22 @@ public class ArrayKata{
             }
         }
         return sum;
+    }
+
+    public static int[] maximumAndMinimumOf(int[] array){
+        int[] newArray = new int[2];
+        int maximum = array[0];
+        int minimum = array[0];
+        for (int count = 0; count < array.length; count++){
+            if (array[count] > maximum){
+                maximum = array[count];
+            }
+            if (array[count] < minimum){
+                minimum = array[count];
+            }
+        }
+        newArray[0] = maximum;
+        newArray[1] = minimum;
+        return newArray;
     }
 }
