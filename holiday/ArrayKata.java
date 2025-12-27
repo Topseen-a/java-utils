@@ -3,7 +3,7 @@ public class ArrayKata{
     public static void main(String[] args){
 
     int[] array = {7,12,3,8,4};
-    System.out.println(noOfOddNumbersIn(array));
+    System.out.println(noOfEvenNumbersIn(array));
     }
 
     public static int maximumIn(int[] array){
@@ -75,6 +75,16 @@ public class ArrayKata{
         int counter = 0;
         for (int count = 0; count < array.length; count++){
             if (array[count] % 2 != 0){
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    public static int noOfEvenNumbersIn(int[] array){
+        int counter = 0;
+        for (int count = 0; count < array.length; count++){
+            if (array[count] % 2 == 0){
                 counter++;
             }
         }
