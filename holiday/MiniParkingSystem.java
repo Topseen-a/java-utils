@@ -13,6 +13,12 @@ public class MiniParkingSystem{
             
             System.out.print("Choose an option: ");
             int choice = input.nextInt();
+
+            switch (choice){
+                case 1:
+                    System.out.print("Enter a slot from (1-20) ");
+                    int slotChoice = input.nextInt();
+            }
         }
     }
 
