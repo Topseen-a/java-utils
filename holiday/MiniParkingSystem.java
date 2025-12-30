@@ -1,7 +1,9 @@
 import java.util.Scanner;
+import java.util.Arrays;
 public class MiniParkingSystem{
     public static void main(String[] args){
 
+    int[] parkingSlot = new int [20];
     Scanner input = new Scanner(System.in);
     
         while(true){
@@ -21,8 +23,9 @@ public class MiniParkingSystem{
 
             switch (choice){
                 case 1:
-                    System.out.print("Enter a slot from (1-20): ");
+                    System.out.print("Enter a slot to park from (1-20): ");
                     int slotChoice = input.nextInt();
+                    parkCar(slotChoice);
                     break;
                 case 2:
                     System.out.print("Enter the slot number to remove your car: ");
@@ -34,6 +37,4 @@ public class MiniParkingSystem{
             }
         }
     }
-
-
 }
