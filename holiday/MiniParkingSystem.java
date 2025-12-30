@@ -25,7 +25,7 @@ public class MiniParkingSystem{
                 case 1:
                     System.out.print("Enter a slot to park from (1-20): ");
                     int slotChoice = input.nextInt();
-                    parkCar(slotChoice);
+                    
                     break;
                 case 2:
                     System.out.print("Enter the slot number to remove your car: ");
