@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 public class MiniParkingSystem{
     public static void main(String[] args){
 
@@ -25,7 +24,17 @@ public class MiniParkingSystem{
                 case 1:
                     System.out.print("Enter a slot to park from (1-20): ");
                     int slotChoice = input.nextInt();
-                    
+
+                    if (slotChoice < 1 || slotChoice > 20){
+                        System.out.println("Invalid choice ");
+                    }
+                    else if (parkingSlot[slotChoice - 1] == 1){
+                        System.out.println("Slot already occupied ");
+                    }
+                    else {
+                        parkingSlot[slotChoice - 1] = 1;
+                        System.out.println("Your car is parked at slot " + slotChoice);
+                    }
                     break;
                 case 2:
                     System.out.print("Enter the slot number to remove your car: ");
