@@ -39,6 +39,17 @@ public class MiniParkingSystem{
                 case 2:
                     System.out.print("Enter the slot number to remove your car: ");
                     int removeSlotNumber = input.nextInt();
+
+                    if (removeSlotNumber < 1 || removeSlotNumber > 20){
+                        System.out.println("Invalid choice ");
+                    }
+                    else if (parkingSlot[removeSlotNumber - 1] == 0){
+                        System.out.println("Slot already empty ");
+                    }
+                    else {
+                        parkingSlot[removeSlotNumber - 1] = 0;
+                        System.out.println("Your car is removed from slot " + removeSlotNumber);
+                    }
                     break;
                 default:
                     System.out.println("Invalid choice, choose an option from the listed option ");
