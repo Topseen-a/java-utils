@@ -1,71 +1,72 @@
 import java.util.Scanner;
-import java.util.Arrays;
 public class StudentGrade{
     public static void main(String[] args){
     
         Scanner input = new Scanner(System.in);
 
         System.out.print("How many student do you have? ");
-        int studentNumber = input.nextInt();
+        int studentCount = input.nextInt();
 
         System.out.print("How many subjects do they offer? ");
-        int subjectNumber = input.nextInt();
+        int subjectCount = input.nextInt();
 
         System.out.println("\nSaving >>>>>>>>>>>>>>>>>>");
         System.out.println("Saved succesfully");
 
-        int[][] scores = new int[studentNumber][subjectNumber];
-        int[] total = new int[studentNumber];
-        int[] average = new int[studentNumber];
-        int[] position = new int[studentNumber];
+        int[][] studentScores = new int[studentCount][subjectCount];
+        int[] totalScoresPerStudent = new int[studentCount];
+        int[] averageScoresPerStudnt = new int[studentCount];
+        int[] studentPositions = new int[studentCount];
 
-        int[] passedSubjects = new int[subjectNumber];
-        int[] failedSubject = new int[subjectNumber];
+//        int[] passedSubjects = new int[subjectNumber];
+//        int[] failedSubject = new int[subjectNumber];
 
-        int studentScores = 0;
-        int averageScores = 0;
+        int classTotalScores = 0;
+        int classAverageScores = 0;
 
-        int highestScore = scores[0][0];
-        int highestStudent = 0;
-        int highestSubject = 0;
+        int highestScoreOverall = studentScores[0][0];
+        int highestScoreStudent = 0;
+        int highestScoreSubject = 0;
 
-        int lowestScore = scores[0][0];
-        int lowestStudent = 0;
-        int lowestSubject = 0;
+        int lowestScoreOverall = studentScores[0][0];
+        int lowestScoreStudent = 0;
+        int lowestScoreSubject = 0;
 
-        for (int student = 0; student < studentNumber; student++){
-            System.out.println("\nEntering score for student " + (student + 1));
-            int totalScores = 0;
+        for (int studentIndex = 0; studentIndex < studentCount; studentIndex++){
+            System.out.println("\nEntering score for student " + (studentIndex + 1));
+            int studentTotalScore = 0;
 
-            for (int subject = 0; subject < subjectNumber; subject++){
-                System.out.print("Enter score for subject " + (subject + 1) + ": ");
-                scores[student][subject] = input.nextInt();
+            for (int subjectIndex = 0; subjectIndex < subjectCount; subjectIndex++){
+                System.out.print("Enter score for subject " + (subjectIndex + 1) + ": ");
+                studentScores[studentIndex][subjectIndex] = input.nextInt();
 
-                while(scores[student][subject] < 0 || scores[student][subject] > 100){
+                while(studentScores[studentIndex][subjectIndex] < 0 || studentScores[studentIndex][subjectIndex] > 100){
                     System.out.print("Invalid score, enter a score between 0 - 100: ");
-                    scores[student][subject] = input.nextInt();
+                    studentScores[studentIndex][subjectIndex] = input.nextInt();
                 }
 
-                totalScores += scores[student][subject];
+                studentTotalScore += studentScores[studentIndex][subjectIndex];
 
-                if (scores[student][subject] > highestScore){
-                    highestScore = scores[student][subject];
-                    highestStudent = student;
-                    highestSubject = subject;
+                if (studentScores[studentIndex][subjectIndex] > highestScoreOverall){
+                    highestScoreOverall = studentScores[studentIndex][subjectIndex];
+                    highestScoreStudent = studentIndex;
+                    highestScoreSubject = subjectIndex;
                 }
-                if (scores[student][subject] < lowestScore){
-                    lowestScore = scores[student][subject];
-                    lowestStudent = student;
-                    lowestSubject = subject; 
+                if (studentScores[studentIndex][subjectIndex] < lowestScoreOverall){
+                    lowestScoreStudent = studentScores[studentIndex][subjectIndex];
+                    lowestScoreStudent = studentIndex;
+                    highestScoreSubject = subjectIndex; 
                 }
             }
             
-            total[student] = totalScores;
-            average[student] = totalScores / subjectNumber;
+            totalScoresPerStudent[studentIndex] = studentTotalScore;
+            averageScoresPerStudnt[studentIndex] = studentTotalScore / subjectCount;
             
-            studentScores += totalScores;
-            averageScores += average[student];
+            classTotalScores += studentTotalScore;
+            classAverageScores += averageScoresPerStudnt[studentIndex];
         }
+
+//        for (int studentIndex = 0; student < )
     }
 
 }
