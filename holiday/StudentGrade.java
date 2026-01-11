@@ -24,11 +24,11 @@ public class StudentGrade{
 //        int classTotalScores = 0;
 //        int classAverageScores = 0;
 
-        int highestScoreOverall = studentScores[0][0];
+        int highestScoreOverall = -1;
         int highestScoreStudent = 0;
         int highestScoreSubject = 0;
 
-        int lowestScoreOverall = studentScores[0][0];
+        int lowestScoreOverall = 101;
         int lowestScoreStudent = 0;
         int lowestScoreSubject = 0;
 
@@ -56,6 +56,13 @@ public class StudentGrade{
                     lowestScoreOverall = studentScores[studentIndex][subjectIndex];
                     lowestScoreStudent = studentIndex;
                     lowestScoreSubject = subjectIndex; 
+                }
+
+                if (studentScores[studentIndex][subjectIndex] >= 50){
+                    passPerSubject[subjectIndex]++;
+                }
+                else {
+                    failPerSubject[subjectIndex]++;
                 }
             }
             
@@ -166,8 +173,8 @@ public class StudentGrade{
             }
         }
         
-        System.out.println("\nThe hardest subject is subject " + (hardestSubjectIndex + 1) + " with " + hardestSubjectFailCount + " failures.");
-        System.out.println("The easiest subject is subject " + (easiestSubjectIndex + 1) + " with " + easiestSubjectPassCount + " passes.");
+        System.out.println("\nThe hardest subject is subject " + (hardestSubjectIndex + 1) + " with " + hardestSubjectFailCount + " failures");
+        System.out.println("The easiest subject is subject " + (easiestSubjectIndex + 1) + " with " + easiestSubjectPassCount + " passes");
         System.out.println("The overall highest score is scored by student " + (highestScoreStudent + 1) + " in subject " + (highestScoreSubject + 1) + " scoring " + highestScoreOverall);
         System.out.println("The overall lowest score is scored by student " + (lowestScoreStudent + 1) + " in subject " + (lowestScoreSubject + 1) + " scoring " + lowestScoreOverall);
         
