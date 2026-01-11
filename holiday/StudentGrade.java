@@ -21,9 +21,6 @@ public class StudentGrade{
         int[] passPerSubject = new int[subjectCount];
         int[] failPerSubject = new int[subjectCount];
 
-//        int classTotalScores = 0;
-//        int classAverageScores = 0;
-
         int highestScoreOverall = -1;
         int highestScoreStudent = 0;
         int highestScoreSubject = 0;
@@ -31,6 +28,9 @@ public class StudentGrade{
         int lowestScoreOverall = 101;
         int lowestScoreStudent = 0;
         int lowestScoreSubject = 0;
+
+        int classTotalScores = 0;
+        double classAverageScore;
 
         for (int studentIndex = 0; studentIndex < studentCount; studentIndex++){
             System.out.println("\nEntering score for student " + (studentIndex + 1));
@@ -68,9 +68,8 @@ public class StudentGrade{
             
             totalScoresPerStudent[studentIndex] = studentTotalScore;
             averageScoresPerStudent[studentIndex] = studentTotalScore / subjectCount;
+            classTotalScores += studentTotalScore;
             
-//            classTotalScores += studentTotalScore;
-//            classAverageScores += averageScoresPerStudnt[studentIndex];
         }
 
         for (int studentIndex = 0; studentIndex < studentCount; studentIndex++){
@@ -178,6 +177,37 @@ public class StudentGrade{
         System.out.println("The overall highest score is scored by student " + (highestScoreStudent + 1) + " in subject " + (highestScoreSubject + 1) + " scoring " + highestScoreOverall);
         System.out.println("The overall lowest score is scored by student " + (lowestScoreStudent + 1) + " in subject " + (lowestScoreSubject + 1) + " scoring " + lowestScoreOverall);
         
-    }
+        System.out.println();
+        System.out.println("==================================================================");
+        System.out.println("CLASS SUMMARY");
+        System.out.println("==================================================================");
 
+        int bestGraduatingStudentIndex = 0;
+        int worstGraduatingStudentIndex = 0;
+
+        int bestGraduatingStudentScore = totalScoresPerStudent[0];
+        int worstGraduatingStudentScore = totalScoresPerStudent[0];
+
+        for (int studentIndex = 1; studentIndex < studentCount; studentIndex++){
+            if (totalScoresPerStudent[studentIndex] > bestGraduatingStudentScore){
+                bestGraduatingStudentScore = totalScoresPerStudent[studentIndex];
+                bestGraduatingStudentIndex = studentIndex;
+            }
+            if (totalScoresPerStudent[studentIndex] < worstGraduatingStudentScore){
+                worstGraduatingStudentScore = totalScoresPerStudent[studentIndex];
+                worstGraduatingStudentIndex = studentIndex;
+            }
+        }
+        
+        classAverageScore = classTotalScores / studentCount;
+
+        System.out.println("Best Graduating Student is: Student " + (bestGraduatingStudentIndex + 1) + " scoring " + bestGraduatingStudentScore);
+
+        System.out.println("Worst Graduating Student is: Student " + (worstGraduatingStudentIndex + 1) + " scoring " + worstGraduatingStudentScore);
+
+        System.out.println("------------------------------------------------------------------");
+        System.out.println("Class Total Score   : " + classTotalScores);
+        System.out.println("Class Average Score : " + classAverageScore);
+        System.out.println("==================================================================");
+    }
 }
