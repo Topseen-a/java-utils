@@ -8,9 +8,10 @@ public class MiniParkingSystem{
         while(true){
             System.out.println("Welcome to Mini Parking System. ");
             System.out.println();
-            System.out.println("1. Choose a slot to park your car ");
-            System.out.println("2. Remove your car from the slot ");
-            System.out.println("3. Display parking status ");
+            System.out.println("1. Park car automatically");
+            System.out.println("2. Choose a slot to park your car ");
+            System.out.println("3. Remove your car from the slot ");
+            System.out.println("4. Display parking status ");
             System.out.println("0. Exit the app ");
             
             System.out.print("Choose an option: ");
@@ -22,7 +23,23 @@ public class MiniParkingSystem{
             }
 
             switch (choice){
-                case 1:
+                case 1: 
+                    int index;
+                    for (index = 0; index < parkingSlot.length; index++){
+                        if (parkingSlot[index] == 0){
+                            parkingSlot[index] = 1;
+                            System.out.println("Your car is parked at slot " + (index + 1));
+                            break;
+                        }
+                    }
+
+                    if (index == parkingSlot.length){
+                        System.out.println("Parking lot is full");
+                    }
+                    System.out.println();
+                    break;
+            
+                case 2:
                     System.out.print("Enter a slot to park from (1-20): ");
                     int slotChoice = input.nextInt();
 
@@ -39,7 +56,7 @@ public class MiniParkingSystem{
                     }
                     break;
 
-                case 2:
+                case 3:
                     System.out.print("Enter the slot number to remove your car: ");
                     int removeSlotNumber = input.nextInt();
 
@@ -56,7 +73,7 @@ public class MiniParkingSystem{
                     }
                     break;
                     
-                case 3:
+                case 4:
                     System.out.println();
                     System.out.println("Parking status: ");
                     for (int count = 0; count < parkingSlot.length; count++){
