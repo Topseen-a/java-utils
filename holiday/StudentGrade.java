@@ -21,11 +21,11 @@ public class StudentGrade{
         int[] passPerSubject = new int[subjectCount];
         int[] failPerSubject = new int[subjectCount];
 
-        int highestScoreOverall = -1;
+        int highestScoreOverall = 0;
         int highestScoreStudent = 0;
         int highestScoreSubject = 0;
 
-        int lowestScoreOverall = 101;
+        int lowestScoreOverall = 0;
         int lowestScoreStudent = 0;
         int lowestScoreSubject = 0;
 

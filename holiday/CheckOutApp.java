@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.time.LocalDateTime;
 public class CheckOutApp{
     public static void main(String[] args){
     
@@ -8,25 +7,25 @@ public class CheckOutApp{
         System.out.print("What is the customer's name? ");
         String customerName = input.nextLine();
 
-        String[] items = new String[20];
-        int[] quantityOfItems = new int[20];
-        double[] prices = new double[20];
+        String[] items = new String[100];
+        int[] quantityOfItems = new int[100];
+        double[] prices = new double[100];
 
-        int count = 0;
+        int numberOfItems = 0;
         double subTotal = 0;
 
         while(true){
             System.out.print("What did the user buy? ");
-            items[count] = input.nextLine();
+            items[numberOfItems] = input.nextLine();
 
             System.out.print("How many pieces? ");
-            quantityOfItems[count] = input.nextInt();
+            quantityOfItems[numberOfItems] = input.nextInt();
 
             System.out.print("How much per unit? ");
-            prices[count] = input.nextDouble();
+            prices[numberOfItems] = input.nextDouble();
 
-            subTotal += quantityOfItems[count] * prices[count];
-            count++;
+            subTotal += quantityOfItems[numberOfItems] * prices[numberOfItems];
+            numberOfItems++;
 
             System.out.print("Add more items (yes/no)? ");
             input.nextLine();
@@ -46,22 +45,19 @@ public class CheckOutApp{
         double discount = (discountInput / 100) * subTotal;
         double vat = 0.075 * (subTotal - discount);
         double totalBill = subTotal - discount + vat;
-
-//        LocalDateTime now = LocalDateTime.now();
     
         System.out.println();
         System.out.println("SEMICOLON STORES");
         System.out.println("MAIN BRANCH");
         System.out.println("LOCATION: 312, HERBERT MACAULY WAY, SABO YABA, LAGOS.");
         System.out.println("TEL: 03293828343");
-//        System.out.println("Date: " + LocalDateTime);
         System.out.println("Cashier: " + cashierName);
         System.out.println("Customer Name: " + customerName);
         System.out.println("===========================================");
         System.out.println("ITEM\tQTY\tPRICE\tTOTAL(NGN)");
         System.out.println("-------------------------------------------");
 
-        for (int index = 0; index < count; index++){
+        for (int index = 0; index < numberOfItems; index++){
             double total = quantityOfItems[index] * prices[index];
             System.out.println(items[index] + "\t" + quantityOfItems[index] + "\t" + prices[index] + "\t" + total);
         }
@@ -86,14 +82,13 @@ public class CheckOutApp{
         System.out.println("MAIN BRANCH");
         System.out.println("LOCATION: 312, HERBERT MACAULY WAY, SABO YABA, LAGOS.");
         System.out.println("TEL: 03293828343");
-//        System.out.println("Date: " + LocalDateTime);
         System.out.println("Cashier: " + cashierName);
         System.out.println("Customer Name: " + customerName);
         System.out.println("===========================================");
         System.out.println("ITEM\tQTY\tPRICE\tTOTAL(NGN)");
         System.out.println("-------------------------------------------");
 
-        for (int index = 0; index < count; index++){
+        for (int index = 0; index < numberOfItems; index++){
             double total = quantityOfItems[index] * prices[index];
             System.out.println(items[index] + "\t" + quantityOfItems[index] + "\t" + prices[index] + "\t" + total);
         }
