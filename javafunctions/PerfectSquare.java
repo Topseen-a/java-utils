@@ -1,7 +1,7 @@
 public class PerfectSquare{
     public static void main(String[] args){
 
-    int[] array = {2,4,3,8};
+    int[] array = {36,4,9,25};
     System.out.println(isPerfectSquare(array));
     }
 
