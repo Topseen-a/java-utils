@@ -5,8 +5,9 @@ public class MiniParkingSystem{
         Scanner input = new Scanner(System.in);
 
         int[] parkingSlot = new int[20];
+        int choice = -1;
 
-        while (true){
+        while (choice != 0){
             System.out.println("Welcome to Mini Parking System. ");
             System.out.println();
             System.out.println("1. Park car automatically");
@@ -16,12 +17,7 @@ public class MiniParkingSystem{
             System.out.println("0. Exit the app ");
 
             System.out.print("Choose an option: ");
-            int choice = input.nextInt();
-
-            if (choice == 0){
-                System.out.println("Exiting app...");
-                break;
-            }
+            choice = input.nextInt();
 
             switch (choice){
                 case 1:
@@ -38,6 +34,10 @@ public class MiniParkingSystem{
 
                 case 4:
                     displayParkingStatus(parkingSlot);
+                    break;
+
+                case 0:
+                    System.out.println("Exiting app...");
                     break;
 
                 default:

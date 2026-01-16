@@ -25,7 +25,7 @@ public class StudentGrade{
         int highestScoreStudent = 0;
         int highestScoreSubject = 0;
 
-        int lowestScoreOverall = 0;
+        int lowestScoreOverall = 100;
         int lowestScoreStudent = 0;
         int lowestScoreSubject = 0;
 
