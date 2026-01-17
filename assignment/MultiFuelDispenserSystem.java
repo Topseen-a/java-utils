@@ -24,7 +24,7 @@ public class MultiFuelDispenserSystem{
             System.out.println("2. Show Transaction History");
             System.out.println("0. Exit");
 
-            System.out.println("Choose an option");
+            System.out.print("Choose an option");
             choice = input.nextInt();
 
             switch (choice){
@@ -37,6 +37,31 @@ public class MultiFuelDispenserSystem{
     public static void buyFuel(Scanner input){
         System.out.print("Choose an option: ");
         int fuelChoice = input.nextInt();
+
+        if (fuelChoice < 1 || fuelChoice > fuelNames.length){
+            System.out.println("Invalid choice");
+            return;
+        }
+        
+        int index = fuelChoice - 1;
+        String fuelName = fuelNames[index];
+        int price = fuelPrices[index];
+
+        System.out.println("Litre or Amount: ").toLowerCase();
+        String methodOfBuyingFuel = input.nextLine;
+
+        switch (methodOfBuyingFuel){
+            case "litre":
+                
+                break;
+            
+            case "Ammount":
+    
+                break;
+        
+            default:
+                System.out.println("Invalid input");
+        }
     }
 
 }
