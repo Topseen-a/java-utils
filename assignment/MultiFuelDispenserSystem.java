@@ -29,8 +29,20 @@ public class MultiFuelDispenserSystem{
 
             switch (choice){
                 case 1: 
-            }
+                    buyFuel(input);
+                    break;
+    
+                case 2:
+                   showTransactionHistory();
+                    break;
             
+                case 3:
+                    System.out.print("Exiting...");
+                    break;
+
+                default:
+                    System.out.println("Invalid option, try again");
+            }  
         }
     }
 
@@ -47,16 +59,44 @@ public class MultiFuelDispenserSystem{
         String fuelName = fuelNames[index];
         int price = fuelPrices[index];
 
-        System.out.println("Litre or Amount: ").toLowerCase();
+        System.out.println("Litre or Amount? ").toLowerCase();
         String methodOfBuyingFuel = input.nextLine;
 
         switch (methodOfBuyingFuel){
             case "litre":
+                int litres;
+
+                while (true){
+                    System.out.print("How many litres of fuel are you buying? ");
+                    litres = input.nextInt();
+
+                    if (litres >= 1 && litres <= 50){
+                        break;
+                    }
+                    else {
+                        Sytem.out.println("Litres must be between 1-50");
+                    }
+                }
                 
+                int amount = litres * price;
                 break;
             
             case "Ammount":
-    
+                int amount;
+
+                while (true){
+                    System.out.print("How much are you buying? ");
+                    amount = input.nextInt();
+        
+                    if (amount >= price){
+                        break;
+                    }
+                    else {
+                        System.out.println("Amount must be more than litre price");
+                    }           
+                }
+
+                int litres = amount / price;
                 break;
         
             default:
@@ -64,4 +104,28 @@ public class MultiFuelDispenserSystem{
         }
     }
 
+    public static void showTransactionHistory(String fuel, int litre, int amount){
+        fuelHistory[transactionCount] = fuel;
+        litreHistory[transactionCount] = litre;
+        amountHistory[transactionCount] = amount;
+        historyDate[transactionCount] = LocalDate.now().toString();
+        transactionCount++;
+
+        System.out.println("Saving transaction history...");
+
+        if (transactionCount == 0){
+            System.out.println("No transactions found");
+            return;
+        }
+
+        Systemout.println("\n Customer's Transaction Receipt");
+        for (int count = 0; count < transactionCount; count++){
+            System.out.println("===========================================");
+            System.out.println("Product: " + fuelHistory[count]);
+            System.out.println("Amount: " + amountHistory[count]);
+            System.out.println("Litres: " + litreHistory[count]);
+            System.outprintln("Date: " + historyDate[count]);
+            System.out.println("===========================================");
+        }
+    }
 }
