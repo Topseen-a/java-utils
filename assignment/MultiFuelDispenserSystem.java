@@ -99,6 +99,7 @@ public class MultiFuelDispenserSystem{
         while (true){
             System.out.print("How many litres of fuel are you buying? ");
             litres = input.nextDouble();
+
             if (litres >= 1 && litres <= 50){
                 break;
             }
@@ -114,6 +115,7 @@ public class MultiFuelDispenserSystem{
         while (true){
             System.out.print("How much are you buying? ");
             amount = input.nextDouble();
+
             if (amount >= price){
                 break;
             }
@@ -124,15 +126,17 @@ public class MultiFuelDispenserSystem{
         return amount;
     }
 
-    public static double calculateAmount(double litres, double price) {
-        return litres * price;
+    public static double calculateAmount(double litres, double price){
+        double amount = litres * price;
+        return amount;
     }
 
-    static double calculateLitres(double amount, double price) {
-        return amount / price;
+    static double calculateLitres(double amount, double price){
+        double litres = amount / price;
+        return litres;
     }
 
-    public static void saveTransaction(String fuel, double litres, double amount) {
+    public static void saveTransaction(String fuel, double litres, double amount){
 
         if (transactionCount >= fuelHistory.length) {
             System.out.println("Transaction history full!");
