@@ -65,16 +65,16 @@ public class MultiFuelDispenserSystem{
         String fuel = fuelNames[index];
         double price = fuelPrice[index];
 
-        String buyingMethod = getBuyingMethod(input);
+        String methodOfBuyingFuel = getBuyingMethod(input);
 
         double litres;
         double amount;
 
-        if (buyingMethod.equalsIgnoreCase("litres")){
+        if (methodOfBuyingFuel.equalsIgnoreCase("litres")){
             litres = getValidLitres(input);
             amount = calculateAmount(litres, price);
         }
-        else if (buyingMethod.equalsIgnoreCase("amount")){
+        else if (methodOfBuyingFuel.equalsIgnoreCase("amount")){
             amount = getValidAmount(input, price);
             litres = calculateLitres(amount, price);
         }
@@ -137,9 +137,8 @@ public class MultiFuelDispenserSystem{
     }
 
     public static void saveTransaction(String fuel, double litres, double amount){
-
-        if (transactionCount >= fuelHistory.length) {
-            System.out.println("Transaction history full!");
+        if (transactionCount >= fuelHistory.length){
+            System.out.println("Transaction history full");
             return;
         }
 
@@ -153,7 +152,7 @@ public class MultiFuelDispenserSystem{
     }
 
 
-    public static void printReceipt(String fuel, double litres, double amount) {
+    public static void printReceipt(String fuel, double litres, double amount){
         System.out.println("Customer's Transaction Receipt");
         System.out.println("===========================================");
         System.out.println("Product: " + fuel);
@@ -162,14 +161,13 @@ public class MultiFuelDispenserSystem{
         System.out.println("===========================================\n");
     }
 
-    public static void showTransactionHistory() {
-
-        if (transactionCount == 0) {
+    public static void showTransactionHistory(){
+        if (transactionCount == 0){
             System.out.println("No transactions found\n");
             return;
         }
 
-        for (int count = 0; count < transactionCount; count++) {
+        for (int count = 0; count < transactionCount; count++){
             System.out.println("===========================================");
             System.out.println("Product: " + fuelHistory[count]);
             System.out.println("Amount: #" + amountHistory[count]);
