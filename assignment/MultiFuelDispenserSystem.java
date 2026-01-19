@@ -158,6 +158,7 @@ public class MultiFuelDispenserSystem{
         System.out.println("Product: " + fuel);
         System.out.println("Amount: #" + amount);
         System.out.println("Litres: " + litres + "L");
+        System.out.println("Thank you for your patronage");
         System.out.println("===========================================\n");
     }
 
