@@ -13,24 +13,13 @@ public class BaseConverter{
             return "0";
         }
         else {
-            int division = 0;
-            int multiplication = 0;
-            int difference = 0;
-
             String store = "";
-            int originalNumber = number;
 
-            for (int count = 0; count < number; count++){
-                division = originalNumber / 2;
-                multiplication = division * 2;
-                difference = originalNumber - multiplication;
+            while (number > 0){
+                int remainder = number % 2;
+                store += remainder;
+                number /= 2;
 
-                store += difference + "";
-
-                if (division == 0){
-                    break;
-                }
-                originalNumber = division;
             }
 
             String reverse = "";
