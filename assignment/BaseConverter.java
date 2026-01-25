@@ -1,15 +1,15 @@
 public class BaseConverter{
     public static void main(String[] args){
 
-
+        System.out.println(toBaseTwo(20));
     }
 
-    public static int toBaseTwo(int number){
+    public static String toBaseTwo(int number){
 
         if (number < 0){
             number *= -1;
         }
-        else if (number == 0){
+        if (number == 0){
             return "0";
         }
         else {
@@ -24,9 +24,20 @@ public class BaseConverter{
                 division = originalNumber / 2;
                 multiplication = division * 2;
                 difference = originalNumber - multiplication;
+
+                store += difference + "";
+
+                if (division == 0){
+                    break;
+                }
+                originalNumber = division;
             }
 
-        
+            String reverse = "";
+            for (int index = store.length() - 1; index >= 0; index--){
+                reverse += store.charAt(index);
+            }
+            return reverse;
         }
     }
 }
