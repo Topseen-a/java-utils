@@ -1,27 +1,35 @@
 public class BaseConverter{
     public static void main(String[] args){
 
-//        System.out.println(toBaseFive(20));
-//        System.out.println(toBaseTen(20,3));
-        System.out.println(convertBase(20,2,5));
+//        System.out.println(toBaseTwo(20));
+        System.out.println(convertBase(10100,2,5));
     }
 
-    public static int toBaseTen(int number, int fromBase){
+    public static String toBaseTwo(int number){
+
         if (number < 0){
             number *= -1;
         }
-
-        int baseTen = 0;
-        int power = 0;
-
-        while (number > 0){
-            int remainder = number % 10;
-            baseTen += remainder * Math.pow(fromBase,power);
-            number /= 10;
-            power++;
+        if (number == 0){
+            return "0";
         }
-        return baseTen;
-    }    
+        else {
+            String store = "";
+
+            while (number > 0){
+                int remainder = number % 2;
+                store += remainder;
+                number /= 2;
+
+            }
+
+            String reverse = "";
+            for (int index = store.length() - 1; index >= 0; index--){
+                reverse += store.charAt(index);
+            }
+            return reverse;
+        }
+    }
 
     public static String toBaseFive(int number){
     
@@ -48,10 +56,32 @@ public class BaseConverter{
         }
     }
 
+    public static int toBaseTen(int number, int fromBase){
+        if (number < 0){
+            number *= -1;
+        }
+
+        int baseTen = 0;
+        int power = 0;
+
+        while (number > 0){
+            int remainder = number % 10;
+            baseTen += remainder * Math.pow(fromBase,power);
+            number /= 10;
+            power++;
+        }
+        return baseTen;
+
+    }
+
     public static String convertBase(int number, int fromBase, int toBase){
 
         int convertToBase = toBaseTen(number,fromBase);
-        if (toBase == 5){
+
+        if (toBase == 2){
+            return toBaseTwo(convertToBase);
+        }
+        else if (toBase == 5){
             return toBaseFive(convertToBase);
         }
         else {
